@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe AdoptionsController, type: :request do
   describe "POST #create" do
     it "creates an adoption and redirects to the tree's page" do
-      sign_in FactoryBot.create(:user)
+      user = FactoryBot.create(:user)
+      sign_in user
       tree = FactoryBot.create(:tree)
       adoption = FactoryBot.build(:adoption)
 
