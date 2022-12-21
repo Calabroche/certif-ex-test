@@ -6,6 +6,8 @@ class TreesController < ApplicationController
 
   def show
     @tree = Tree.find(params[:id])
+    @adoption = Adoption.new
+    @adoptions = @tree.adoptions
   end
 
   def new
